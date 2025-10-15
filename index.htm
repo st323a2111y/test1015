@@ -15,107 +15,58 @@
   --primary: #06b6d4;
   --secondary: #0891b2;
   --accent: #67e8f9;
+  --text-color: white;
 }
 
 body {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   min-height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: white;
+  color: var(--text-color);
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
 }
 
 header {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
-  padding: 1rem 0;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .container {
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-.flex {
-  display: flex;
-}
-
-.justify-between {
-  justify-content: space-between;
-}
-
-.items-center {
-  align-items: center;
-}
-
-.space-x-6 > * + * {
-  margin-left: 1.5rem;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-4xl {
-  font-size: 2.25rem;
-  line-height: 2.5rem;
-}
-
-.font-bold {
-  font-weight: 700;
-}
-
-.font-extrabold {
-  font-weight: 800;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.p-4 {
-  padding: 1rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
-
-.px-4 {
-  padding-left: 1rem;
-  padding-right: 1rem;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .section {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(5px);
-  border-radius: 0.75rem;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  margin-bottom: 2.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: fadeIn 1s ease-out;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(8px);
-  border-radius: 0.75rem;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-              0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  padding: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
 }
 
 button, .btn {
@@ -126,6 +77,7 @@ button, .btn {
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: bold;
 }
 
 button:hover, .btn:hover {
@@ -135,8 +87,21 @@ button:hover, .btn:hover {
 }
 
 h1, h2, h3 {
-  color: white;
+  color: var(--text-color);
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
 }
 
 a {
@@ -146,252 +111,188 @@ a {
 }
 
 a:hover {
-  color: white;
+  color: var(--primary);
 }
 
-.mb-4 {
-  margin-bottom: 1rem;
+nav ul {
+  display: flex;
+  list-style: none;
 }
 
-.mb-6 {
-  margin-bottom: 1.5rem;
+nav ul li a {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-weight: 600;
 }
 
-.mb-8 {
-  margin-bottom: 2rem;
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.mb-10 {
-  margin-bottom: 2.5rem;
+footer {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
+  margin-top: auto;
+  padding: 1.5rem;
+  box-shadow: 0 -4px 30px rgba(0, 0, 0, 0.1);
 }
 
-.grid {
-  display: grid;
-}
-
-.gap-8 {
-  gap: 2rem;
-}
-
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-}
-
-.text-base {
-  font-size: 1rem;
-  line-height: 1.5rem;
-}
-
-.leading-relaxed {
-  line-height: 1.75;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.rounded-t-lg {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-}
-
-.bg-opacity-30 {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-.backdrop-filter-blur-10 {
-  backdrop-filter: blur(10px);
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.animate-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
-.animated-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-600 { animation-delay: 0.6s; }
 
-.animated-section.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Responsive adjustments */
-@media (min-width: 768px) {
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-  .text-4xl {
-    font-size: 2.5rem;
-    line-height: 2.75rem;
-  }
-}
-
-@media (max-width: 767px) {
-  header {
+@media (max-width: 768px) {
+  header .container {
     flex-direction: column;
     text-align: center;
   }
-  header h1 {
-    margin-bottom: 1rem;
+
+  nav ul {
+    margin-top: 1rem;
+    justify-content: center;
   }
-  header nav ul {
-    flex-direction: column;
-    space-x-6: 0;
+
+  h1 {
+    font-size: 2.5rem;
   }
-  header nav li {
-    margin-top: 0.5rem;
+  h2 {
+    font-size: 2rem;
   }
-  .section {
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  .section, .card {
     padding: 1.5rem;
   }
-  .card {
-    padding: 1rem;
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
   }
 }
   </style>
 </head>
 <body>
-<header class="container mx-auto p-4 flex justify-between items-center">
-    <h1 class="text-3xl font-bold">最強の昆虫ランキング 🏆</h1>
-    <nav>
-        <ul class="flex space-x-6">
-            <li><a href="#intro" class="hover:text-accent transition duration-300">はじめに</a></li>
-            <li><a href="#strength" class="hover:text-accent transition duration-300">強度と力</a></li>
-            <li><a href="#poison" class="hover:text-accent transition duration-300">毒の強さ</a></li>
-            <li><a href="#adaptation" class="hover:text-accent transition duration-300">繁殖力と適応能力</a></li>
-            <li><a href="#conclusion" class="hover:text-accent transition duration-300">結論</a></li>
-        </ul>
-    </nav>
-</header>
-
-<main class="container mx-auto py-8 px-4">
-    <section id="intro" class="section rounded-lg shadow-lg p-8 mb-10 animated-section">
-        <h2 class="text-4xl font-extrabold mb-6 text-center">はじめに 🌍</h2>
-        <p class="text-lg leading-relaxed text-center">昆虫の世界は多様性に富み、それぞれが驚くべき能力を持っています。本レポートでは、様々な観点から「最強の昆虫」を定義し、複数のランキングを提示することで、昆虫の持つ多様な強さを探求します。</p>
-    </section>
-
-    <section id="strength" class="section rounded-lg shadow-lg p-8 mb-10 animated-section">
-        <h2 class="text-4xl font-extrabold mb-8 text-center">強度と力 💪</h2>
-        <p class="text-lg leading-relaxed mb-8 text-center">純粋な身体能力、特に力強さという点で最強の昆虫を考える場合、以下のような候補が挙げられます。</p>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">1 カブトムシ 🐞</h3>
-                <p class="text-base leading-relaxed">ヘラクレスオオカブトなど、大型のカブトムシは自身の体重の何百倍もの物体を持ち上げることができ、その力は驚異的です。彼らは主に獲物を捕らえたり、メスを巡る争いでその力を発揮します。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">2 フンコロガシ 💩</h3>
-                <p class="text-base leading-relaxed">体重比でいえば、フンコロガシは地球上で最も強い生き物の一つとされています。彼らは自分たちの体重の1000倍以上の重さのフンを転がすことができます。この力は、食料確保と繁殖に直結しています。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">3 アリ 🐜</h3>
-                <p class="text-base leading-relaxed">特にグンタイアリやパラポネラのような大型のアリは、個々の力は小さくても、数的優位と組織力によって非常に強力な存在となります。彼らは集団で大型の獲物を捕らえ、運びます。</p>
-            </div>
+<body>
+    <header class="p-4 mb-8">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-bold">カブトムシの驚異的な力 🪲</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#intro" class="text-lg hover:text-accent transition duration-300">はじめに</a></li>
+                    <li><a href="#secret" class="text-lg hover:text-accent transition duration-300">力の秘密</a></li>
+                    <li><a href="#ranking" class="text-lg hover:text-accent transition duration-300">ランキング</a></li>
+                    <li><a href="#conclusion" class="text-lg hover:text-accent transition duration-300">結論</a></li>
+                </ul>
+            </nav>
         </div>
-    </section>
+    </header>
 
-    <section id="poison" class="section rounded-lg shadow-lg p-8 mb-10 animated-section">
-        <h2 class="text-4xl font-extrabold mb-8 text-center">毒の強さ ☠️</h2>
-        <p class="text-lg leading-relaxed mb-8 text-center">攻撃力、特に毒の強さで最強の昆虫を考える場合、以下のような候補が挙げられます。</p>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">1 パラポネラ 💥</h3>
-                <p class="text-base leading-relaxed">オオキバアリとしても知られ、その刺し傷は「弾丸アリの刺し傷」とまで言われるほどの激痛を引き起こします。その毒は神経毒であり、人間にとっては致命的ではないものの、とてつもない苦痛を与えます。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">2 スズメバチ 🐝</h3>
-                <p class="text-base leading-relaxed">オオスズメバチは、その強力な毒と攻撃性で知られています。彼らは集団で行動し、他の昆虫だけでなく、時には小動物をも襲います。その毒はアレルギー反応を引き起こし、重篤な場合は命に関わることもあります。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">3 タランチュラホーク 🕷️🦅</h3>
-                <p class="text-base leading-relaxed">この大型のハチは、タランチュラを狩る専門家です。その刺し傷は非常に強力で、人間にとっては短時間ではあるものの、激しい痛みをもたらします。彼らの毒はタランチュラの神経を麻痺させ、生きたまま卵を産みつけるための準備をします。</p>
-            </div>
-        </div>
-    </section>
+    <main class="container mx-auto px-4 py-8 space-y-12">
+        <section id="intro" class="section p-8 rounded-xl shadow-lg animate-fade-in">
+            <h2 class="text-4xl font-bold mb-6">カブトムシが動かせる物ランキングとその驚異的な力</h2>
+            <h3 class="text-2xl font-semibold mb-4">はじめに</h3>
+            <p class="text-lg leading-relaxed">
+                カブトムシは、その見かけによらず非常に強力な昆虫として知られています。特にオスは立派な角を持ち、これを活用してメスを巡る争いや縄張り争いを繰り広げます。しかし、彼らの真の強さは、その体重に対する持ち上げる力の比率にあります。今回は、カブトムシが実際にどれくらいの重さの物体を動かすことができるのか、そのランキング形式でご紹介し、その驚くべき能力を解説します。
+            </p>
+        </section>
 
-    <section id="adaptation" class="section rounded-lg shadow-lg p-8 mb-10 animated-section">
-        <h2 class="text-4xl font-extrabold mb-8 text-center">繁殖力と適応能力 🌱</h2>
-        <p class="text-lg leading-relaxed mb-8 text-center">種の存続という観点から最強の昆虫を考える場合、繁殖力と環境適応能力が重要になります。</p>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">1 ゴキブリ 🪳</h3>
-                <p class="text-base leading-relaxed">その驚異的な繁殖力と、どんな環境にも適応できる能力は、まさに最強と呼ぶにふさわしいものです。彼らは食料の選択肢が広く、放射線にも比較的強い耐性を持つとされます。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">2 ハエ 🪰</h3>
-                <p class="text-base leading-relaxed">特にイエバエのような種は、短期間で大量の子孫を残し、様々な病原体を媒介することで生態系に大きな影響を与えます。彼らの繁殖能力は、非常に高い生存戦略といえます。</p>
-            </div>
-            <div class="card p-6 rounded-lg shadow-md">
-                <h3 class="text-2xl font-bold mb-4">3 バッタ 🦗</h3>
-                <p class="text-base leading-relaxed">大発生すると、広範囲の農作物を食い荒らし、甚大な被害をもたらします。その集団行動と、驚異的な食欲、そして地域を移動する能力は、種の繁栄という点で強力な能力です。</p>
-            </div>
-        </div>
-    </section>
+        <section id="secret" class="section p-8 rounded-xl shadow-lg animate-fade-in delay-200">
+            <h2 class="text-3xl font-bold mb-6">カブトムシの力の秘密 ✨</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                カブトムシの力強さの秘密は、主に以下の2点にあります。
+            </p>
+            <ul class="list-disc list-inside space-y-4 text-lg ml-4">
+                <li>
+                    <strong>外骨格と筋肉：</strong>カブトムシは丈夫な外骨格を持ち、これは体を保護するだけでなく、筋肉が効率的に力を発揮するための支点となります。また、体の大きさに比べて発達した胸部の筋肉が、角を動かしたり、重いものを持ち上げたりする際に重要な役割を果たします。
+                </li>
+                <li>
+                    <strong>テコと重心：</strong>角を使ってものを持ち上げたり動かしたりする際に、テコの原理を巧みに利用しています。また、低い重心と広い体形が、不安定なものを持ち上げる際の安定性に寄与しています。
+                </li>
+            </ul>
+        </section>
 
-    <section id="conclusion" class="section rounded-lg shadow-lg p-8 animated-section">
-        <h2 class="text-4xl font-extrabold mb-6 text-center">結論 ✨</h2>
-        <p class="text-lg leading-relaxed text-center">「最強の昆虫」という定義は、どのような能力を重視するかによって大きく異なります。純粋な力ではカブトムシやフンコロガシ、攻撃力ではパラポネラやスズメバチ、そして種の繁栄という点ではゴキブリやハエが圧倒的な強さを見せます。昆虫たちの多様な強さは、自然界における生命のたくましさと進化の奥深さを教えてくれます。</p>
-    </section>
-</main>
+        <section id="ranking" class="section p-8 rounded-xl shadow-lg animate-fade-in delay-400">
+            <h2 class="text-3xl font-bold mb-6">カブトムシが動かせる物ランキング 🏆</h2>
+            <p class="text-lg leading-relaxed mb-6">
+                （動画は今回は提供できませんが、具体的な例を挙げて説明します）
+            </p>
 
-<footer class="text-center py-6 mt-10 rounded-t-lg bg-opacity-30 backdrop-filter-blur-10">
-    <p class="text-sm">&copy; 2023 最強の昆虫ランキング. All rights reserved. 🦋</p>
-</footer>
+            <div class="space-y-8">
+                <article class="card p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">第3位：自身の数十倍の重さの小石や木の葉 🍃</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        カブトムシは、自分の体重の数十倍に相当する小石や木の葉を動かすことができます。これは、彼らが餌を探したり、身を隠す場所を作ったりする際に頻繁に見られる行動です。特に、土中や朽木の中にいる幼虫は、周囲の土や木片を押し退けて移動する際にこの力を利用します。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        具体的な例としては、体重が約10グラムのカブトムシが、200グラムから300グラム程度の小石を地面からわずかに持ち上げたり、押して動かしたりする様子が観察されています。これは人間で例えると、体重70キログラムの人が、約1.4トンから2.1トンの物体を持ち上げることに相当し、非常に驚異的な力と言えます。
+                    </p>
+                </article>
+
+                <article class="card p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">第2位：自身の約100倍の重さの物体（実験室での記録）📊</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        実験室環境下での記録では、カブトムシが自身の約100倍の重さの物体を持ち上げたという報告があります。これは、カブトムシの体に直接おもりを乗せて、どれくらいの重さまで動かすことができるかを計測したものです。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        約10グラムのカブトムシが約1キログラムの重りを持ち上げたという記録があります。これは、彼らの筋肉の収縮効率と外骨格の強さがいかに優れているかを示しています。しかし、これは瞬間的な力であり、長時間その重さを維持することは困難です。通常、この能力は、競争相手のカブトムシを角で押し上げたり、転倒させたりする際に発揮されると考えられています。
+                    </p>
+                </article>
+
+                <article class="card p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-bold mb-4">第1位：競争相手のカブトムシ（縄張り争いにおける力）⚔️</h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        カブトムシが最も頻繁に、そして最も力強く動かす対象は、やはり同種の競争相手のカブトムシです。オス同士の縄張り争いやメスを巡る争いでは、互いに角を突き合わせ、相手を地面から持ち上げたり、ひっくり返したりします。この行動は、彼らの力の真骨頂とも言えるでしょう。
+                    </p>
+                    <p class="text-lg leading-relaxed">
+                        相手のカブトムシの体重は自分とほぼ同じかそれ以上であるため、彼らは自分の体重に匹敵する、あるいはそれを超える重さを瞬間的に持ち上げ、コントロールしていることになります。これは、単に重いものを持ち上げるだけでなく、相手の動きを予測し、重心を崩しながら力を加えるという高度な技術と戦略を要します。
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="conclusion" class="section p-8 rounded-xl shadow-lg animate-fade-in delay-600">
+            <h2 class="text-3xl font-bold mb-6">結論 🌟</h2>
+            <p class="text-lg leading-relaxed">
+                カブトムシは、その小さな体からは想像もつかないほどの力を持つ昆虫です。彼らが自身の体重の何十倍、何百倍もの重さを動かすことができるのは、優れた外骨格、発達した筋肉、そしてテコの原理を巧みに利用する能力によるものです。この驚異的な力は、彼らが自然界で生き抜くための重要な武器となっており、彼らの生態を理解する上で非常に興味深い側面と言えます。
+            </p>
+        </section>
+    </main>
+
+    <footer class="p-6 mt-12 text-center text-lg bg-gray-900 bg-opacity-30 backdrop-filter backdrop-blur-sm shadow-md">
+        <p>&copy; 2023 カブトムシの驚異的な力. All rights reserved.</p>
+    </footer>
+</body>
 
   <script>
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('.animated-section');
 
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  sections.forEach(section => {
-    observer.observe(section);
-  });
-
-  // Smooth scrolling for navigation links
-  document.querySelectorAll('nav a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      document.querySelector(this.hash).scrollIntoView({
-        behavior: 'smooth'
-      });
-    });
-  });
-});
   </script>
 </body>
 </html>
